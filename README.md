@@ -1,36 +1,116 @@
-📊 My Big Data & Data Engineering Portfolio
+<div align="center">
 
-Welcome to my Big Data and Data Engineering Portfolio! Here, I showcase projects focused on distributed data processing, real-time streaming pipelines, event-driven architectures, and cloud-native data engineering — using Apache Spark, PySpark, Kafka, Google Cloud Pub/Sub, Cloud Functions, and GCP Dataproc.
+# 📊 Big Data & Data Engineering Portfolio
 
-🔄 Data Engineering Workflow
-Data Ingestion — Batch and real-time ingestion using Kafka, Pub/Sub, and Spark
-Distributed Processing — Large-scale transformations using PySpark RDDs and DataFrames
-Pipeline Orchestration — End-to-end pipelines on GCP Dataproc and Cloud Functions
-Streaming — Real-time event-driven pipelines using Kafka and Pub/Sub triggers
-Storage & Querying — SparkSQL, BigQuery, and Cloud Storage for data lakes
-Deployment — Cloud-native deployments on GCP (Dataproc, Cloud Functions, GCS)
-🚀 Projects
-Project	Description	Skills
-Spark DL Image Classification	Distributed Deep Learning pipeline on GCP Dataproc using PySpark and PyTorch. Performs image classification using MobileNetV2 with Pandas UDFs for scalable inference. Ranked 74 in the IIT Madras BS Data Science competition.	PySpark, GCP Dataproc, MobileNetV2, Pandas UDF, PyTorch
-MNIST PySpark GCP Pipeline	End-to-end MNIST digit classification pipeline on GCP using PySpark MLlib. Orchestrates Train → Evaluate → Validate on Dataproc with automated inference triggered by a Cloud Function on GCS file uploads.	PySpark, MLlib, GCP Dataproc, Cloud Functions, GCS
-Kafka Spark Streaming	Real-time Big Data streaming pipeline built for IIT Madras BS Data Science (2026). Implements end-to-end Kafka → Spark Structured Streaming on GCP Dataproc with sliding window aggregations.	Apache Kafka, Spark Structured Streaming, GCP Dataproc, Python
-GCP Pub/Sub Event-Driven Pipeline	Event-driven GCP pipeline using Cloud Message triggers, Pub/Sub, Cloud Functions (Gen 2), and Cloud Storage. Processes and routes data automatically on incoming Pub/Sub messages. IIT Madras BS Data Science (2026).	GCP Pub/Sub, Cloud Functions Gen 2, Cloud Storage, Python
-PySpark ClickCount — RDD & DataFrame	PySpark implementation of click count analytics using both RDD and DataFrame APIs. Demonstrates core Spark programming concepts on GCP. IIT Madras BS Data Science — Intro to Big Data (2019-2024).	PySpark, RDD, DataFrame, Spark, Python
-Longest Line — GCX Cloud Function	GCS-triggered Google Cloud Function (Gen 2) written in Python 3.12. Finds the longest line in uploaded text files, logs the analysis results to Cloud Logging, and saves results back to the GCS bucket. IIT Madras BS Data Science.	GCP Cloud Functions Gen 2, Cloud Logging, GCS, Python
-SparkSQL Aggregations	SparkSQL pipeline on GCP Dataproc covering aggregation operations and customer dimension table queries. IIT Madras BS Data Science (2019-2024).	SparkSQL, PySpark, GCP Dataproc, Aggregations, Python
-Intro to Big Data — PySpark Dataproc	PySpark streaming and aggregation pipeline on GCP Dataproc. IIT Madras BS Data Science & Applications — Intro to Big Data Week 5 assignment (2019-2024).	PySpark, GCP Dataproc, Streaming, Python
-🧰 Tech Stack
-Category	Tools
-Distributed Processing	Apache Spark, PySpark, RDD, DataFrames, SparkSQL
-Streaming	Apache Kafka, Spark Structured Streaming
-Cloud (GCP)	Dataproc, Cloud Functions Gen 2, Pub/Sub, GCS, Cloud Logging
-ML on Big Data	MLlib, MobileNetV2, Pandas UDF, PyTorch
-Languages	Python
-📬 Contact
+### *Data that doesn't move at scale is just a very large file.*
 
-Feel free to connect with me for collaborations, feedback, or opportunities.
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Apache_Spark-PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-Streaming-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
+![GCP](https://img.shields.io/badge/GCP-Dataproc-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+![Pub/Sub](https://img.shields.io/badge/Pub%2FSub-Event_Driven-669DF6?style=for-the-badge&logo=googlecloud&logoColor=white)
+![Cloud Functions](https://img.shields.io/badge/Cloud_Functions-Serverless-FBBC04?style=for-the-badge&logo=googlecloud&logoColor=black)
 
-💼 LinkedIn
-📧 Email
+</div>
 
-Thank you for visiting my portfolio!
+---
+
+## 👋 About This Portfolio
+
+I'm a data science student at **IIT Madras (BSc, Data Science & Applications)** who likes building systems that keep working after the data stops fitting in memory.
+
+This portfolio collects my hands-on work in distributed data processing: batch jobs on a single VM, then Spark clusters on Dataproc, event-driven serverless triggers, real-time Kafka streams, and finally distributed ML inference. Each project answers a practical question: *how does this pipeline behave when the data gets bigger, arrives faster, or shows up without warning?*
+
+> **Philosophy:** *If it only runs on a laptop with a sample CSV, it isn't a data pipeline yet.*
+
+---
+
+## 🗺️ Data Engineering Stack I Work With
+
+```
+  Sources  ──►  GCS / Kafka / Pub/Sub  (ingestion)
+                          │
+            Cloud Functions  (event-driven triggers)
+                          │
+           Spark on GCP Dataproc  (RDD · DataFrame · SparkSQL)
+                          │
+         Spark Structured Streaming  (windowed real-time aggregation)
+                          │
+          MLlib / Pandas UDF + PyTorch  (distributed ML)
+                          │
+            GCS / Cloud Logging  (storage & observability)
+```
+
+---
+
+## 🚀 Core Projects
+
+> 🟢 Complete &nbsp;|&nbsp; 🟡 In Progress &nbsp;|&nbsp; 🔵 Planned &nbsp;|&nbsp; ⭐ Featured
+
+| Status | Project | What Problem It Solves | Stack |
+|:---:|---|---|---|
+| 🟢 ⭐ | [**Spark DL Image Classification**](https://github.com/pankajmohansahu/spark-dl-image-classification-iitm) | Scales deep-learning inference across a Spark cluster: a pretrained MobileNetV2 is broadcast to workers and applied via Pandas UDFs, so images are classified in parallel instead of one at a time on one machine. | PySpark · Pandas UDF · MobileNetV2 · PyTorch/TensorFlow · GCP Dataproc |
+| 🟢 ⭐ | [**MNIST PySpark GCP Dataproc Pipeline**](https://github.com/pankajmohansahu/mnist-pyspark-gcp-dataproc-pipeline) | End-to-end ML on big data: trains a Decision Tree with CrossValidator in Spark MLlib on Dataproc, then runs inference automatically whenever a new file lands in GCS, triggered by a Gen2 Cloud Function. | PySpark MLlib · GCP Dataproc · Cloud Functions Gen2 · GCS |
+| 🟢 ⭐ | [**Kafka + Spark Structured Streaming**](https://github.com/pankajmohansahu/iitm-bigdata-week8-kafka-spark-streaming) | Real-time pipeline with dual Kafka producers (GCE VM + Cloud Functions) feeding Spark Structured Streaming on Dataproc, with sliding-window aggregations that update continuously as events arrive. | Apache Kafka · Spark Structured Streaming · GCP Dataproc · Compute Engine |
+| 🟢 | [**GCP Pub/Sub Event-Driven Pipeline**](https://github.com/pankajmohansahu/gcp-pubsub-event-driven-pipeline-iitm) | Decouples producers from consumers: Cloud Storage upload events fan out through Pub/Sub to Cloud Functions (Gen1 & Gen2) and a Compute Engine subscriber, so processing reacts to data with no polling. | Pub/Sub · Cloud Functions Gen1/Gen2 · Cloud Storage · Compute Engine |
+| 🟢 | [**SparkSQL Analytics & SCD Type I/II**](https://github.com/pankajmohansahu/iitm-bsds-bigdata-week6-sparksql-scd) | Warehouse-style dimension handling at scale: runs aggregation analytics and implements Slowly Changing Dimensions (Type I overwrite and Type II history-tracking) on customer tables with Spark SQL. | Spark SQL · PySpark · GCP Dataproc |
+
+---
+
+## 🧪 Practice & Exploration
+
+| Project | Focus |
+|---|---|
+| [PySpark Data Cleaning on Dataproc — Week 5](https://github.com/pankajmohansahu/iitm-bsds-intro-big-data-week5-pyspark-dataproc) | First cluster job: data cleaning and aggregation with PySpark submitted to Google Cloud Dataproc. |
+| [PySpark ClickCount — RDD vs DataFrame](https://github.com/pankajmohansahu/PySpark-ClickCount-RDD-DataFrame) | The same click-count analysis written with both the RDD and DataFrame APIs, to compare the low-level and optimized abstractions directly. |
+| [Longest Line — GCS-Triggered Cloud Function — Week 3](https://github.com/pankajmohansahu/iitm-ibd-w3-longest-line-gcs-function) | First serverless trigger: a Gen1 Cloud Function (Python 3.11) that analyses uploaded text files, logs to Cloud Logging, and writes results back to the bucket. |
+| [Longest Line in GCS — Week 2](https://github.com/pankajmohansahu/iitm-ibd-week2-longest-line-gcs) | Where it started: a Python script reading a GCS-hosted file from Cloud Shell with `gsutil`, before any distributed tooling. |
+
+---
+
+## 🧰 Tech Stack
+
+<div align="center">
+
+| Layer | Tools |
+|:---:|:---:|
+| **Distributed Processing** | Apache Spark · PySpark · RDD · DataFrames |
+| **Querying & Modelling** | Spark SQL · SCD Type I / II |
+| **Streaming** | Apache Kafka · Spark Structured Streaming |
+| **Event-Driven / Serverless** | Google Pub/Sub · Cloud Functions (Gen1 & Gen2) |
+| **Compute** | GCP Dataproc · Compute Engine |
+| **Storage & Observability** | Google Cloud Storage · Cloud Logging |
+| **ML on Big Data** | Spark MLlib · Pandas UDF · PyTorch · MobileNetV2 |
+| **Language** | Python 3.10+ |
+
+</div>
+
+---
+
+## 🗂️ My Other Portfolios
+
+| Portfolio | Focus |
+|---|---|
+| [⚙️ MLOps Project Portfolio](https://github.com/pankajmohansahu/My_MLOps_Project_Portfolio) | End-to-end ML pipelines using MLflow, DVC, Docker, Kubernetes, and GCP |
+| [🧠 ML & Deep Learning Portfolio](https://github.com/pankajmohansahu/My-ML-Deep-Learning-Project-Portfolio) | NLP, Speech, LLM fine-tuning and Agentic AI with PyTorch, HuggingFace, Gemma and LangGraph |
+| [👁️ Computer Vision Portfolio](https://github.com/pankajmohansahu/My_Computer_Vision_Portfolio) | Image classification, object detection, and restoration with PyTorch and EfficientNet |
+| [🌐 Full Stack App Development Portfolio](https://github.com/pankajmohansahu/My_Full_Stack_Application_Development_Portfolio) | Web apps using Flask, SQLite, Vue.js and REST APIs |
+
+---
+
+## 📬 Let's Connect
+
+I'm always open to discussing data engineering, project feedback, or collaboration opportunities.
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pankaj-mohan-sahu-3b8662205/)
+[![Email](https://img.shields.io/badge/Email-Reach_Out-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sahumpankaj1994@gmail.com)
+
+</div>
+
+---
+
+<div align="center">
+<sub>⭐ If any of these projects helped you, a star goes a long way!</sub>
+</div>
